@@ -13,7 +13,6 @@ Source0: %{distname}.tar.bz2
 License: GPL
 Group: Games/Arcade
 Url: http://maniadrive.raydium.org/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch: noarch
 
 
