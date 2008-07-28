@@ -3,7 +3,7 @@
 %define version 1.01
 %define distname ManiaDrive-%{version}-data
 
-%define release %mkrel 3
+%define release %mkrel 5
 
 Summary: ManiaDrive data files
 Name: %{name}
