@@ -3,7 +3,7 @@
 %define version 1.2
 %define distname ManiaDrive-%{version}-data
 
-%define release %mkrel 2
+%define release %mkrel 3
 
 Summary: ManiaDrive data files
 Name: %{name}
@@ -22,6 +22,9 @@ ManiaDrive data files
 
 %prep
 %setup -q -n %{distname}
+pushd game
+    ls *.mni > mania_server_tracks.txt
+popd
 
 %build
 
@@ -29,6 +32,7 @@ ManiaDrive data files
 rm -rf %{buildroot}
 install -d %{buildroot}%{_gamesdatadir}
 cp -a game %{buildroot}%{_gamesdatadir}/%{game_name}
+rm -f %{buildroot}%{_gamesdatadir}/%{game_name}/php.ini
 rm -f %{buildroot}%{_gamesdatadir}/%{game_name}/*.php
 rm -rf %{buildroot}%{_gamesdatadir}/%{game_name}/rayphp
 find %{buildroot}%{_gamesdatadir}/%{game_name} -type d -exec chmod 755 {} \;
